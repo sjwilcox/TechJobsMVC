@@ -8,7 +8,7 @@
             @foreach (var column in ViewBag.columns)
             {
                 <span>
-                    <input type="radio" name="searchType" id="@column.Key" value="@column.Key" checked="@column.Key == 'all'" />
+                    <input type="radio" name="searchType"  id="@column.Key" value="@column.Key" checked="" >
                     <label for="@column.Key">@column.Value</label>
                 </span>
             }
@@ -36,7 +36,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                ID:  @job.Id
+                                ID: @job.Id
                             </td>
                         </tr>
                         <tr>
@@ -46,22 +46,22 @@
                         </tr>
                         <tr>
                             <td>
-                                Employer:  @job.Employer
+                                Employer: <a asp-controller="Search" asp-action="Results" asp-route-searchType="all" asp-route-searchTerm="@job.Employer">@job.Employer</a>                            
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Location:  @job.Location
+                                Location:  <a asp-controller="Search" asp-action="Results" asp-route-searchType="all" asp-route-searchTerm="@job.Location">@job.Location</a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Position:  @job.PositionType
+                                Position:  <a asp-controller="Search" asp-action="Results" asp-route-searchType="all" asp-route-searchTerm="@job.PositionType">@job.PositionType</a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Compentency:  @job.CoreCompetency
+                                Compentency: <a asp-controller="Search" asp-action="Results" asp-route-searchType="all" asp-route-searchTerm="@job.CoreCompetency">@job.CoreCompetency</a> 
                             </td>
                         </tr>
                     </tbody>
